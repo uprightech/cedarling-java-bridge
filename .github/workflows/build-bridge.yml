@@ -1,0 +1,17 @@
+name: Build Library
+run-name: Build Library
+on:
+  push:
+    branches:
+      - main
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Jans Repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 1
+        repository: uprightech/cedarling-java-bridge
