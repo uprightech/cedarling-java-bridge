@@ -29,5 +29,6 @@ jobs:
           mkdir -p $GITHUB_WORKSPACE/cedarling-java-bridge/crates/
           cp -r $GITHUB_WORKSPACE/jans/jans-cedarling/ $GITHUB_WORKSPACE/cedarling-java-bridge/crates/jans-cedarling
     
-    - run: cargo build
-      working-directory: ./cedarling-java-bridge
+    - run: |
+        cd $GITHUB_WORKSPACE/cedarling-java-bridge
+        cargo build
