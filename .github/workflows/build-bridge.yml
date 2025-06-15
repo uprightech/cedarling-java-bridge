@@ -11,13 +11,18 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+      name: Checking out project
       with:
           fetch-depth: 1
           repository: uprightech/cedarling-java-bridge
+          path: "cedarling-java-bridge"
       
     - uses: actions/checkout@v4
+      name: Checking out Janssen
       with:
         fetch-depth: 1
         repository: JanssenProject/jans
+        path: jans
+
     
     - run: cp -r $GITHUB_WORKSPACE/jans/jans-cedarling/ $GITHUB_WORKSPACE/cedarling-java-bridge/crates/jans-cedarling
