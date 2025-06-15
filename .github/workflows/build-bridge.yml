@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions-rust-lang/setup-rust-toolchain@v1
 
     - uses: actions/checkout@v4
       name: Checking out project
@@ -23,8 +24,10 @@ jobs:
         fetch-depth: 1
         repository: JanssenProject/jans
         path: jans
-
     
     - run: |
           mkdir -p $GITHUB_WORKSPACE/cedarling-java-bridge/crates/
           cp -r $GITHUB_WORKSPACE/jans/jans-cedarling/ $GITHUB_WORKSPACE/cedarling-java-bridge/crates/jans-cedarling
+    
+    - run: cargo build
+      working-directory: $GITHUB_WORKSPACE/cedarling-java-bridge
