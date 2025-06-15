@@ -10,12 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    
+    - run: echo $GITHUB_WORKSPACE
+
     - uses: actions/checkout@v4
       name: Checking out project
       with:
           fetch-depth: 1
           repository: uprightech/cedarling-java-bridge
-          path: "cedarling-java-bridge"
       
     - uses: actions/checkout@v4
       name: Checking out Janssen
