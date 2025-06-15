@@ -10,6 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout Project Repo
+      uses: actions/checkout@v4
+      with:
+          fetch-depth: 1
+          repository: uprightech/cedarling-java-bridge
+      
     - name: Checkout Jans Repository
       uses: actions/checkout@v4
       with:
